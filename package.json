@@ -1,0 +1,30 @@
+{
+  "name": "Gj-falcor-api",
+  "version": "1.0.0",
+  "description": "Gj-falcor-api",
+  "main": "index.js",
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "express": "^4.13.3",
+    "falcor-express": "^0.1.2",
+    "falcor-json-graph": "^1.1.7",
+    "falcor-router": "^0.2.11",
+    "grunt": "^0.4.5",
+    "grunt-shell": "^1.1.2",
+    "load-grunt-tasks": "^3.3.0",
+    "time-grunt": "^1.2.2"
+  },
+  "devDependencies": {
+    "istanbul-harmony": "^0.3.16",
+    "mocha": "^2.3.4",
+    "mocha-lcov-reporter": "^1.0.0",
+    "should": "^7.1.1",
+    "supertest": "^1.1.0"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha --recursive test/ --bail",
+    "test-cov": "node ./node_modules/istanbul-harmony/lib/cli.js cover ./node_modules/mocha/bin/_mocha --recursive test/ --bail"
+  },
+  "author": "tutu",
+  "license": "ISC"
+}
