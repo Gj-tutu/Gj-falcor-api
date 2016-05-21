@@ -1,7 +1,7 @@
 /**
  * Created by tutu on 15-11-16.
  */
-var setting = require("../../../setting");
+var setting = require("../../setting");
 var should = require('should');
 var request = require('supertest');
 var app = require(setting.path+'/app');

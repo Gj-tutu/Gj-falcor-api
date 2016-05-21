@@ -9,25 +9,22 @@ var check = require(setting.path+'/tools/check');
 var apiHandle = require(setting.apiPath+'/apiHandle');
 var demoModel = require(setting.apiPath+'/model/demo');
 
-function demoList(path){
+function one(path){
     return demoModel.list(path.id)
         .then(function(){
-        var resultList = [];
+        var demo = {};
         path.id.map(function (id) {
             path.key.map(function (key) {
-                resultList.push({
+                demo = {
                     path: ["demo", id, key],
                     value: key
-                });
+                };
             });
         });
-        return resultList;
+        return demo;
     });
 }
-
-var demo = [{
+module.exports.list = [{
     route: "demo[{integers:id}][{keys:key}]",
-    get: apiHandle(demoList()).arg("id").arg("key").handle()
-}];
-
-module.exports.list = demo;
+    get: apiHandle(one).arg("id").arg("key").handle()
+}];;
